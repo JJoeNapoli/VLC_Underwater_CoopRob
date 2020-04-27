@@ -4,9 +4,9 @@ void storeMsg(int pin, int *p) {
   String my_msg_bit = "";
   int my_int;
   int count = 0;
-  int flag = 0;
+  int breakpoint = 0;
 
-  while (1) {
+  while (!breakpoint) {
     //clear the string
     my_msg_bit = "";
     //for 8 bit try to convert from Morse to bit
@@ -22,7 +22,7 @@ void storeMsg(int pin, int *p) {
       } else if (dt1 < wake_1 + error_delay && dt1 > wake_1 - error_delay) {
         my_msg_bit = my_msg_bit + "1";
       } else if (dt1 > wake_1 + error_delay) { //breakpoint-end message
-        flag = 1;
+        breakpoint = 1;
         break;
       }
     }
@@ -34,10 +34,6 @@ void storeMsg(int pin, int *p) {
 
     //increase the counter
     count ++;
-    //if a breakpoint has been received
-    if (flag == 1) {
-      
-      break;
-    }
+
   }
 }
