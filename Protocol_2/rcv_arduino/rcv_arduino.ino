@@ -4,9 +4,9 @@
 #define rcv 12
 //set the parameters
 //frequency
-#define freq 2000 //Hz
+#define freq 2500 //Hz
 // 50*50 picture
-#define n_image 1600 //Bytes 
+#define n_image 2500 //Bytes 
 
 #define n_info 5 //number of elements of "info" 
 

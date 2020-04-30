@@ -19,8 +19,8 @@ void storeMsg(int pin, int *p) {
         //take the time
         t2 = millis();
         dt1 = t2 - t1;
-        //if the time is > 10s exit
-        if (dt1 > 1000) {
+        //if the time is > 3s exit
+        if (dt1 > 3000) {
           flag = 1;
           flag1 = 1;
           break;
